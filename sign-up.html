@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/intlTelInput.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
+    <title>Sign UP</title>
+    
+    <style>
+        .navbar-brand img{
+            height: 50px;
+        }
+
+        .btn-login {
+        font-size: 0.9rem;
+        letter-spacing: 0.05rem;
+        padding: 0.75rem 1rem;
+        }
+
+        .btn-google {
+        color: white !important;
+        background-color: #ea4335;
+        }
+
+        .btn-facebook {
+        color: white !important;
+        background-color: #3b5998;
+        }
+
+        .bbb{
+            max-width: 30%;
+        }
+        .intl-tel-input {
+          width: 100%;
+        }
+        @media (max-width: 1000px){
+            .bbb{
+                max-width: 70%;
+            }
+
+        }
+        @media (max-width: 1300px){
+            .bbb{
+                max-width: 50%;
+            }
+        }
+        @media (max-width: 600px){
+            .bbb{
+                max-width: 100%;
+            }
+        }
+        .iti__flag {background-image: url("img/flags.png");}
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .iti__flag {background-image: url("img/flags@2x.png");}
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div class="navbar navbar-expand-md bg-primary text-secondary fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><span class="text-light"><strong>Attendance</strong><span class="text-secondary lead"><strong>.Site</strong></span></span></a>
+
+            <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav ms-auto">
+                   <li class="nav-item"><a href="#get-started" class="nav-link text-secondary"><span class="lead h6">Get Started</span></a></li>
+                  <li class="nav-item"><a href="#" class="nav-link text-secondary"><span class="lead h6">Sign in</span></a></li>
+                </ul>
+                 
+            </div>--> 
+        </div>
+    </div>
+
+
+    <section>
+        <div class="container-fluid ps-md-0">
+            <div class="row">
+                <div class="col-lg-10 col-xl-9 my-1 mx-auto bbb">
+                  <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                    
+                      <!-- Background image for card set in CSS! -->
+                    </div>
+                    <div class="card-body p-4 p-sm-5">
+                      <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
+                      <div>
+          
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
+                          <label for="floatingInputUsername">Username</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="FullName" placeholder="Fullname">
+                          <label for="FullName">Full name (Will be visible to others)</label>
+                        </div>
+                        <hr>
+                        <div class="form-floating mb-3">
+                          <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                          <label for="floatingInputEmail">Email address</label>
+                        </div>
+                        
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="floatingInputPNumber" >
+                        </div>
+                        
+                        <hr>
+          
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Password</label>
+                        </div>
+                        <!--
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
+                          <label for="floatingPasswordConfirm">Confirm Password</label>
+                        </div>
+                      -->
+                                  
+                        <div class="form-floating mb-3">
+                            <select class="form-control" id="mission" placeholder="Choose your account type">
+                                <option value="Instructor">Instructor</option>
+                                <option value="Student">Student</option>
+                              </select>
+                            <label for="mission">Choose your account type</label>
+                        </div>
+
+
+                        <div class="d-grid mb-2">
+                          <button class="btn btn-lg btn-secondary btn-login fw-bold text-uppercase" id="sub_btn" type="submit">Register</button>
+                        </div>
+          
+                        <a class="d-block text-center mt-2 small" href="sign-in.html">Have an account? Sign In</a>
+                        <!--
+                        <hr class="my-4">
+                        
+                        <div class="d-grid mb-2">
+                          <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
+                            <i class="fab fa-google me-2"></i> Sign up with Google
+                          </button>
+                        </div>
+          
+                        <div class="d-grid">
+                          <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
+                            <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
+                          </button>
+                        </div>
+                        -->
+                    </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        </section>
+
+        <script src="js/intlTelInput.min.js"></script>
+
+        <script src="js/sign-up.js" type="module"></script>
+</body>
+</html>

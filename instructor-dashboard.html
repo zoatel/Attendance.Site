@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a682aaac88.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
+    <title>Instructor Dashboard</title>
+    <style>
+        .navbar-brand img{
+            height: 50px;
+        }
+
+        .main-btn-get1 {
+            color: #fff;
+            background-color: #5A4AE3;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: 600;
+            display: inline-block;
+            padding: 0.9375em 2.1875em;
+            letter-spacing: 1px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            transition: 0.7s ease;
+        }
+        .main-btn-get1:hover {
+            /*background-color: #ffff;*/
+           transform: scale(1.1);
+           color: #fff;
+        }
+        .vertical-center {
+            min-height: 100%;
+            min-height: 100vh; 
+            display: flex;
+            align-items: center;
+        }
+        @media (max-width: 600px){
+            .main-btn-get1{
+                transform: scale(0.7);
+            }
+            .main-btn-get1:hover {
+            /*background-color: #ffff;*/
+           /* transform: scale(1);*/
+            color: #fff;
+        }
+        }
+
+        .main-btn-get {
+            color: #fff;
+            background-color: #b10c0c;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            display: inline-block;
+            padding: 0.9375em 2.1875em;
+            letter-spacing: 1px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            transition: 0.7s ease;
+        }
+        .main-btn-get:hover {
+            /*background-color: #ffff;*/
+           transform: scale(1.1);
+           color: #fff;
+        }
+        .vertical-center {
+            min-height: 100%;
+            min-height: 100vh; 
+            display: flex;
+            align-items: center;
+        }
+        @media (max-width: 600px){
+            .main-btn-get{
+                transform: scale(0.8);
+            }
+            .main-btn-get:hover {
+            /*background-color: #ffff;*/
+           /* transform: scale(1);*/
+            color: #fff;
+        }
+        }
+        .img-responsive {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar navbar-expand-md bg-primary text-secondary fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand"><span class="text-light"><strong>Attendance</strong><span class="text-secondary lead"><strong> =>Instructor</strong><span> Dashboard</span></span></span></a>
+            <div class="d-none d-md-block">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-1"><a id="userlink" class="nav-link text-secondary" href=""><span class="lead h6">Username</span></a></li>
+                        <li class="nav-item"><a id="signoutlink" class="nav-link text-secondary" href="javascript:Signout()"><span class="lead h6">SignOut</span></a></li>
+                    </ul>
+                     
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    
+    
+
+    <div id="createSession" class="py-5 vertical-center">
+        <div class="container">
+            <div class="text-center">
+                <a class="main-btn-get1" id="sub_btn" type="submit">Start a new session</a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="attendees">
+        <div class="py-5 mt-5">
+            <div class="container">
+                <h1 class="text-center mt-3 mb-5">Scan the QR code to attend!</h1>
+                <div class="col-sm-12 text-center">
+                    <div class="img-responsive" id="qrcode"></div>
+                </div>
+                <h3 id="sessioncode" class="text-center mt-4 mb-5">The session code is : </h3>
+                <hr>
+                <div class="py-5">
+                    <h2 class="text-center mt-2">The Attendees</h2>
+                    
+                    <table class="table mt-5">
+                        <thead>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                        </thead>
+                        <tbody id="tbody1"></tbody>
+                    </table>
+                    <div class="text-center pt-5">
+                        <div class="pt-5">
+                            <button class="btn btn-lg btn-secondary" onclick="window.print()"><span class="lead">Print</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center pt-2">
+                        <a type="submit" id="end_btn" class="main-btn-get mt-5">End this session</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/i-signout.js"></script>
+    <script src="js/i-dashboard.js" type="module"></script>
+    
+</body>
+</html>

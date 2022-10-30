@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
+    <title>Sign in</title>
+    
+    <style>
+        .navbar-brand img{
+            height: 50px;
+        }
+
+        .login {
+            min-height: 100vh;
+        }
+
+        .login-heading {
+            font-weight: 300;
+        }
+        .btn-login {
+            font-size: 0.9rem;
+            letter-spacing: 0.05rem;
+            padding: 0.75rem 1rem;
+        }
+        .bbb{
+            max-width: 30%;
+        }
+        @media (max-width: 1000px){
+            .bbb{
+                max-width: 70%;
+            }
+
+        }
+        @media (max-width: 1300px){
+            .bbb{
+                max-width: 50%;
+            }
+        }
+        @media (max-width: 600px){
+            .bbb{
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-expand-md bg-primary text-secondary fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><span class="text-light"><strong>Attendance</strong><span class="text-secondary lead"><strong>.Site</strong></span></span></a>
+
+            <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav ms-auto">
+                   <li class="nav-item"><a href="#get-started" class="nav-link text-secondary"><span class="lead h6">Get Started</span></a></li>
+                  <li class="nav-item"><a href="#" class="nav-link text-secondary"><span class="lead h6">Sign in</span></a></li>
+                </ul>
+                 
+            </div>-->
+        </div>
+    </div>
+
+    <section>
+        <div class="container-fluid ps-md-0">
+            <div class="row g-0">
+                <div class="login d-flex align-items-center">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-9 col-lg-8 mx-auto bbb">
+                        <h3 class="login-heading mb-3">Welcome back!</h3>
+                        <div>
+                          <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
+                            <label for="floatingInputUsername">Username</label>
+                          </div>
+                          <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                          </div>
+          
+                          <div class="d-grid">
+                            <button class="btn btn-lg btn-secondary btn-login text-uppercase fw-bold mb-2" id="sub_btn" type="submit">Sign in</button>
+                            <div class="text-center">
+                              <a class="small" href="forgot-password.html">Forgot password?</a>
+                            </div>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+    </section>
+
+    <script src="js/sign-in.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a682aaac88.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
+    <title>Student Dashboard</title>
+    <style>
+        .navbar-brand img{
+            height: 50px;
+        }
+
+        .main-btn-get {
+            color: #fff;
+            background-color: #5A4AE3;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: 600;
+            display: inline-block;
+            padding: 0.9375em 2.1875em;
+            letter-spacing: 1px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            transition: 0.7s ease;
+        }
+        .main-btn-get:hover {
+            /*background-color: #ffff;*/
+           transform: scale(1.1);
+           color: #fff;
+        }
+        .vertical-center {
+            min-height: 100%;
+            min-height: 100vh; 
+            display: flex;
+            align-items: center;
+        }
+        @media (max-width: 600px){
+            .main-btn-get{
+                transform: scale(0.85);
+            }
+            .main-btn-get:hover {
+            /*background-color: #ffff;*/
+           /* transform: scale(1);*/
+            color: #fff;
+        }
+        }
+        .login {
+            min-height: 100vh;
+        }
+
+        .login-heading {
+            font-weight: 300;
+        }
+        .btn-login {
+            font-size: 0.9rem;
+            letter-spacing: 0.05rem;
+            padding: 0.75rem 1rem;
+        }
+        .bbb{
+            max-width: 30%;
+        }
+        @media (max-width: 1000px){
+            .bbb{
+                max-width: 70%;
+            }
+
+        }
+        @media (max-width: 1300px){
+            .bbb{
+                max-width: 50%;
+            }
+        }
+        @media (max-width: 600px){
+            .bbb{
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar navbar-expand-md bg-primary text-secondary fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand"><span class="text-light"><strong>Attendance</strong><span class="text-secondary lead"><strong> =>Student</strong><span> Dashboard</span></span></span></a>
+ 
+            <div class="d-none d-md-block">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-1"><a id="userlink" class="nav-link text-secondary" href=""><span class="lead h6">Username</span></a></li>
+                        <li class="nav-item"><a id="signoutlink" class="nav-link text-secondary" href="javascript:Signout()"><span class="lead h6">SignOut</span></a></li>
+                    </ul>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="EnterInfo">
+        <section>
+            <div class="container-fluid ps-md-0">
+                <div class="row g-0">
+                    <div class="login d-flex align-items-center">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-9 col-lg-8 mx-auto bbb">
+              
+                            <!-- Sign In Form -->
+                            <div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInputSession" placeholder="sessioncode" required autofocus>
+                                <label for="floatingInputSession">Session Code</label>
+                              </div>
+       
+                              <div class="d-grid">
+                                <button class="btn btn-lg btn-secondary btn-login text-uppercase fw-bold mb-2" id="attend_btn" type="submit">Attend</button>
+                              </div>
+              
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+    
+        </section>
+    </div>
+
+    <div id="attendSession" class="py-5 vertical-center">
+        <div class="container">
+            <div class="text-center">
+                <button class="main-btn-get" id="sub_btn" type="submit">Attend a session</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div id="after" class="py-5 vertical-center">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="lead">You Are Atteneding</h1>
+            </div>
+        </div>
+    </div>-->
+
+
+    <script src="js/s-signout.js"></script>
+    <script src="js/s-dashboard.js" type="module"></script>
+    
+</body>
+</html>

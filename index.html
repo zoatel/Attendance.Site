@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a682aaac88.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
+    <title>Attendance</title>
+    <style>
+        .navbar-brand img{
+            height: 50px;
+        }
+
+        
+        .main-btn-get {
+            color: #fff;
+            background-color: #5A4AE3;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            display: inline-block;
+            padding: 0.9375em 2.1875em;
+            letter-spacing: 1px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            transition: 0.7s ease;
+        }
+        .main-btn-get:hover {
+            background-color: #ffff;
+            transform: scale(1.1);
+            color: rgb(0, 0, 0);
+        }
+        @media (max-width: 600px){
+            .main-btn-get{
+                transform: scale(0.9);
+            }
+            .main-btn-get:hover {
+            background-color: #ffff;
+            transform: scale(1);
+            color: rgb(0, 0, 0);
+        }
+        }
+        .hl{
+            border-radius: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="navbar navbar-expand-md bg-primary text-secondary fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand"><span class="text-light"><strong>Attendance</strong><span class="text-secondary lead"><strong>.Site</strong></span></span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a id="userlink" class="nav-link text-secondary" href=""><span class="lead h6">Get Started</span></a></li>
+                    <li class="nav-item"><a id="contact" class="nav-link text-secondary" href="#contactus"><span class="lead h6">Contact Us</span></a></li>
+                    <li class="nav-item"><a id="signoutlink" class="nav-link text-secondary" href=""><span class="lead h6">Sign in</span></a></li>
+                </ul>
+                 
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center py-5">
+        <section id="get-started" class="py-5">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-center">
+                    <div class="py-3">
+                        <h1 class="text-light">Attendance<span class="text-secondary">.Site</span></h1>
+                        <p class="lead">Stop wasting a lot of time taking attendance of the lectures or the online sections, and start using this service to use the extra time correctly.</p>
+                        <p class="lead">Also, it's free!</p>
+                        <div class="text-center text-sm-start">
+                            <a href="sign-up.html" class="main-btn-get">Get Started</a>
+                        </div>
+                            
+                    </div>
+                    <img class="d-none d-md-block img-fluid w-50" src="img/get-started.svg" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="d-flex justify-content-center bg-primary">
+        <section id="get-started" class="py-5">
+            <div class="container mt-5">
+                <div>
+                    <h2 class="text-center lead">Kindly notice that this is v0.0.1 of this website (beta version), and there are many upcoming features.</h2>
+                    <h2 class="text-center lead">So if you noted any disturbing problems, please feel free to contact us down below.</h2>
+                </div>
+                <div class="container mt-5 card" id="contactus">
+                    <div class="pt-4 px-2">
+                        <div class="row">
+                            <div class="mr-auto">
+                              <h2 class="text-center">Contact Us</h2>
+                            </div>
+                    
+                            <div class="mr-auto">
+                              <div class="mb-5">
+                                <div class="row">
+                                  
+                                  <div class="col-md-12 form-group">
+                                    <label for="name" class="col-form-label" id>Name</label>
+                                    <input type="text" class="form-control" name="name" id="name">
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-12 form-group">
+                                    <label for="email" class="col-form-label">Email</label>
+                                    <input type="text" class="form-control" name="email" id="email">
+                                  </div>
+                                </div>
+                    
+                                <div class="row">
+                                  <div class="col-md-12 form-group">
+                                    <label for="message" class="col-form-label">Message</label>
+                                    <textarea class="form-control" name="message" id="message" cols="30" rows="7"></textarea>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-12 text-center pt-4">
+                                    <button class="rounded-pill btn btn-secondary" id="sub_btn">Send Message</button>
+      
+                                  </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+
+                <div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/contact.js" type="module"></script>
+    <script src="js/index.js"></script>
+
+
+</body>
+</html>
